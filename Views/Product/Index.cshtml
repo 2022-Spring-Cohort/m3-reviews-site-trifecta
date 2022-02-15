@@ -12,7 +12,7 @@
 <ul>
     @foreach(Product product in Model)
     {
-        <li>@product.Model</li>
+        <li><a href="/Product/Detail/@product.Id">@product.Model</a></li>
     }
 </ul>
 
