@@ -21,7 +21,8 @@ namespace template_csharp_reviews_site.Controllers
 
         public IActionResult Detail(int id)
         {
-            return View(cellPhones[id]);
+            Product cellPhone = cellPhones.Find(cellPhones => cellPhones.Id == id);
+            return View(cellPhone);
         }
     }
 }
