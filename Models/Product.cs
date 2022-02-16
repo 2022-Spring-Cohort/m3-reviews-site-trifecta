@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace template_csharp_reviews_site.Models
 {
@@ -15,6 +16,8 @@ namespace template_csharp_reviews_site.Models
         public double Price { get; set; }   
 
         public DateTime ReleaseDate { get; set; }   
+
+        public virtual List<Review> Reviews { get; set; }
 
     }
 }
