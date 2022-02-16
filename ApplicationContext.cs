@@ -6,10 +6,12 @@ namespace template_csharp_reviews_site
     public class ApplicationContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         const string CONNECTION_STRING = "Server=(localdb)\\mssqllocaldb; Database=Blog; Trusted_connection=True";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(CONNECTION_STRING);
+            optionsBuilder.UseLazyLoadingProxies();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -48,6 +50,47 @@ namespace template_csharp_reviews_site
                 OSVer = "Android 12",
                 Price = 599.00,
                 ReleaseDate = System.DateTime.Now
+            });
+
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 1,
+                ReviewDate = System.DateTime.Now,
+                Title = "Great.",
+                UserName = "Lisa",
+                Content = "I love it.",
+                ProductId = 1,
+                Rating = 5
+            });
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 2,
+                ReviewDate = System.DateTime.Now,
+                Title = "Great.",
+                UserName = "Norm",
+                Content = "I love it.",
+                ProductId = 2,
+                Rating = 5
+            });
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 3,
+                ReviewDate = System.DateTime.Now,
+                Title = "Great.",
+                UserName = "Chaz",
+                Content = "I love it.",
+                ProductId = 3,
+                Rating = 5
+            });
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 5,
+                ReviewDate = System.DateTime.Now,
+                Title = "Great.",
+                UserName = "Donna",
+                Content = "I love it.",
+                ProductId = 1,
+                Rating = 5
             });
         }
     }
