@@ -20,7 +20,7 @@ namespace template_csharp_reviews_site.Controllers
 
         public IActionResult Detail(int id)
         {
-            Product cellPhone = _context.Products.ToList().Find(cellPhone => cellPhone.Id == id);
+            Product cellPhone = _context.Products.Find(id);
             return View(cellPhone);
         }
     }
