@@ -7,7 +7,7 @@ namespace template_csharp_reviews_site
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        const string CONNECTION_STRING = "Server=(localdb)\\mssqllocaldb; Database=Blog; Trusted_connection=True";
+        const string CONNECTION_STRING = "Server=(localdb)\\mssqllocaldb; Database=ReviewsSite; Trusted_connection=True";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(CONNECTION_STRING);
