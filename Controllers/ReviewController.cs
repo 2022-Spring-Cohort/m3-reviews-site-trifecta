@@ -28,8 +28,8 @@ namespace template_csharp_reviews_site.Controllers
 
         public IActionResult Add(int id)
         {
-
-            return View(new Review());
+            Product product = _context.Products.Find(id);
+            return View(new Review() { ProductId = id });
 
         }
 
@@ -43,7 +43,6 @@ namespace template_csharp_reviews_site.Controllers
             return RedirectToAction("Detail","Product",new { id = review.ProductId});
 
         }
-
 
         public IActionResult Edit(int id)
         {
@@ -62,10 +61,19 @@ namespace template_csharp_reviews_site.Controllers
             return RedirectToAction("Detail","Product",new {id = review.ProductId});
         }
 
-        
+        public IActionResult Delete(int id)
+        {
+            Review reviewToDelete = _context.Reviews.Find(id);
+            _context.Reviews.Remove(reviewToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("Detail", "Product", new { id = reviewToDelete.ProductId });
+        }
 
 
     }
-   
+
 
 }
+   
+
+
