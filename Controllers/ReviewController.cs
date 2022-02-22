@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using template_csharp_reviews_site.Models;
 
@@ -15,6 +16,10 @@ namespace template_csharp_reviews_site.Controllers
 
         public IActionResult Index()
         {
+            //List<Review> reviewsToDelete = _context.Reviews.Where(r => r.ProductId == 0).ToList();
+            //_context.Reviews.RemoveRange(reviewsToDelete);
+            //_context.SaveChanges();
+
             ViewBag.cellPhones = _context.Products.ToList();
             return View(_context.Reviews.ToList());
         }
