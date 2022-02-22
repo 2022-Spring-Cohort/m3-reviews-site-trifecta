@@ -5,14 +5,22 @@
 @{
     
 }
+<h1>Reviews</h1>
 
-<ul>
+
+<ul class="nostyle">
     @foreach (Review review in Model)
     {
-        <li>
-            <a href="/Review/Detail/@review.Id">@review.Product.Brand
-            @review.Product.Model -
+       /* <li>
+            <a href="/Review/Detail/@review.Id">@review.Product
+            @review.Product.Model 
             @review.Title - @review.Rating</a>
-        </li>
+        </li>*/
+         <li><a href="/Review/Detail/@review.Id">@review.Title | @review.Rating</a>|
+             <a href="/Review/Edit/@review.Id">Edit</a>|
+             <a href="/Review/Delete/@review.Id">Delete</a>
+             
+         </li>
+
     }
 </ul>
