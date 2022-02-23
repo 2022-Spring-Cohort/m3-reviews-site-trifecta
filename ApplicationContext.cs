@@ -22,6 +22,7 @@ namespace template_csharp_reviews_site
                 Model = "Galaxy",
                 OSVer = "Android 10",
                 Price = 800.00,
+                Picture = "https://th.bing.com/th/id/OIP.KaKM93VZeh0ZQH0ylnub2gHaHa?pid=ImgDet&rs=1",
                 ReleaseDate = System.DateTime.Now
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -31,6 +32,7 @@ namespace template_csharp_reviews_site
                 Model = "iPhone 13 Pro Max",
                 OSVer = "iOS",
                 Price = 1099.00,
+                Picture= "https://th.bing.com/th/id/R.708c4252d828ae9a7f2eb797f7577b30?rik=4b1OYH%2bB6nrH2g&pid=ImgRaw&r=0",
                 ReleaseDate = System.DateTime.Now
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -40,6 +42,7 @@ namespace template_csharp_reviews_site
                 Model = "Razr",
                 OSVer = "Android 9",
                 Price = 499.00,
+                Picture= "https://th.bing.com/th/id/OIP.oMxlQYNUc6msuFWHGQOglgHaHc?pid=ImgDet&rs=1",
                 ReleaseDate = System.DateTime.Now
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -49,6 +52,7 @@ namespace template_csharp_reviews_site
                 Model = "Pixel 6 Pro",
                 OSVer = "Android 12",
                 Price = 599.00,
+                Picture= "https://touchit.sk/wp-content/uploads/2021/05/google_pixel_6_6_pro_duo_nowat.jpg",
                 ReleaseDate = System.DateTime.Now
             });
 

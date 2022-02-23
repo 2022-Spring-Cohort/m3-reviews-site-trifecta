@@ -21,6 +21,10 @@ namespace template_csharp_reviews_site.Controllers
         public IActionResult Detail(int id)
         {
             Product cellPhone = _context.Products.Find(id);
+            if (string.IsNullOrEmpty(cellPhone.Picture))
+            {
+                cellPhone.Picture = "https://media.istockphoto.com/vectors/smartphone-blank-screen-phone-mockup-template-for-infographics-for-vector-id1192828240?k=20&m=1192828240&s=612x612&w=0&h=A3BgJSW_-u9jOlzIqatYzeSjIgaAbg7eZUlzD-b53Qs=";
+            }
             return View(cellPhone);
         }
 
@@ -56,5 +60,7 @@ namespace template_csharp_reviews_site.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
     }
 }
