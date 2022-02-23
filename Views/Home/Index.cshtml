@@ -5,17 +5,17 @@
 @{
 }
 <div class="home-column">
-    <h1>Top Products</h1>
+    <h1>Bestsellers</h1>
 
     <ol class="card-container">
         @foreach (Product product in Model)
         {
-            <li class="card">@product.Name | Average Review: @product.AverageReviewRating</li>
+            <li class="card"><section class="card-content"><div class="card-image"></div><div class="card-specs">@product.Name | Average Review: @product.AverageReviewRating</div></section></li>
         }
     </ol>
 </div>
 <div class="home-column">
-    <h1>Newest Products</h1>
+    <h1>Latest Releases</h1>
     <ol class="card-container">
 
         @foreach (Product product in Model)

@@ -118,6 +118,24 @@ ol{
 .card {
     gap: 2em;
     border: 2px;
+    border-color: black;
+    border-style: solid;
+    min-height: 16em;
+    margin-bottom: 2em;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-image{
+    width: 30%;
+    border: 2px solid black;
+}
+
+.card-specs{
+    width: 70%;
 }
 
 main {
