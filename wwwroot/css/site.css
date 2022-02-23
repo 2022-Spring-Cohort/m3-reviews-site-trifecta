@@ -1,14 +1,14 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
+/*a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
+}*/
 
 /* Provide sufficient contrast against white background */
-a {
+/*a {
   color: #0366d6;
 }
 
@@ -22,11 +22,11 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
-}
+}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+/*html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
@@ -49,18 +49,18 @@ html {
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
-}
+}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+/*html {
   position: relative;
   min-height: 100%;
 }
 
-body {
+body {*/
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  /*margin-bottom: 60px;
   font-family:'Arial Rounded MT'
 }
 .footer {
@@ -68,5 +68,60 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;*/ /* Vertically center the text there */
+/*}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+    font-family: 'Unbuntu', sans-serif;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.home-column {
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 3em;
+    width: 50%;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+nav li {
+    margin-left: 1em;
+}
+
+ol{
+    list-style-type: none;
+    
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    gap: 2em;
+    border: 2px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
 }

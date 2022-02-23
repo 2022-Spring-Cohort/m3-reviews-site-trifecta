@@ -4,13 +4,24 @@
 *@
 @{
 }
+<div class="home-column">
+    <h1>Top Products</h1>
 
-<h1>Top Products</h1>
+    <ol class="card-container">
+        @foreach (Product product in Model)
+        {
+            <li class="card">@product.Name | Average Review: @product.AverageReviewRating</li>
+        }
+    </ol>
+</div>
+<div class="home-column">
+    <h1>Newest Products</h1>
+    <ol class="card-container">
 
-<ul>
-    @foreach (Product product in Model)
-    {
-        <li>@product.Name | Average Review: @product.AverageReviewRating</li>
-    }
-</ul>
+        @foreach (Product product in Model)
+        {
+            <li class="card">@product.Name | Average Review: @product.AverageReviewRating</li>
+        }
+    </ol>
+</div>
 
