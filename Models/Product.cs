@@ -20,6 +20,8 @@ namespace template_csharp_reviews_site.Models
 
         public virtual List<Review> Reviews { get; set; }
 
+        public string Picture { get; set; }
+
         public virtual double AverageReviewRating
         {
             get
