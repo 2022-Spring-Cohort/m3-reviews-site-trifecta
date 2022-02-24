@@ -34,6 +34,7 @@ namespace template_csharp_reviews_site.Controllers
         public IActionResult Add(int id)
         {
             Product product = _context.Products.Find(id);
+            ViewBag.Product = product;
             return View(new Review() { ProductId = id });
 
         }
