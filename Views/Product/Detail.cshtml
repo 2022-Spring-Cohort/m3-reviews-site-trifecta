@@ -5,30 +5,100 @@
 @{
 }
 
-<h1>@Model.Brand - @Model.Model</h1>
+<div class="product-detail-layout">
+    <!-- Hero -->
+    <div class="product-detail-hero">
+        <img src="@Model.Picture"/>
+    </div>
 
-<img src="@Model.Picture"/>
+    <!-- Details -->
+    <div class="product-detail-details">
+        <h1>@Model.Brand - @Model.Model</h1>
+        <table class="card-details-specs">
+            <tr>
+                <td class="row-header">OS:</td><td>@Model.OSVer</td>
+            </tr>
+            <tr>
+                <td class="row-header">CPU:</td><td>@Model.Processor</td>
+            </tr>
+            <tr>
+                <td class="row-header">RAM:</td><td>@Model.RamSize</td>
+            </tr>
+            <tr>
+                <td class="row-header">Storage:</td><td>@Model.Storage</td>
+            </tr>
+            <tr>
+                <td class="row-header">Released:</td><td>@Model.ReleaseDate.ToString("MMMM dd, yyyy")</td>
+            </tr>
+            <tr>
+                <td class="row-header">Price:</td><td>@Model.Price.ToString("C2")</td>
+            </tr>
+        </table>
 
-<ul>
-    <li>
-        OS Ver: @Model.OSVer
-    </li>
-    <li>
-        Release Date: @Model.ReleaseDate.ToString("MMM yyyy")
-    </li>
-    <li>
-        Price: @Model.Price.ToString("C2")
-    </li>
-</ul>
-<a href="/Product/Update/@Model.Id">Edit</a>|
-<a href="/Product/Remove/@Model.Id">Remove</a>|
-<a href="/Review/Add/@Model.Id">Add Review</a>
+        <div class="card-control-container">
+            <div>
+            <div class="card-control-button">
+                <a href="/Product/Update/@Model.Id">Edit</a>
+            </div>
+            <div class="card-control-button">
+                <a href="/Product/Remove/@Model.Id">Remove</a>
+            </div>
+            </div>
+        </div>
 
-<ul>
-    @foreach (Review review in Model.Reviews)
-    {
-        <li><a href="/Review/Detail">@review.Title</a> | @review.Rating
-        <a href="/Review/Edit/@review.Id">Edit</a>
-        <a href="/Review/Delete/@review.Id">Delete</a></li>
-    }
-</ul>
+        
+        
+    </div>
+
+    <!-- Reviews -->
+    <div class="product-detail-reviews">
+        <h1>Reviews</h1>
+        <div class="product-control">
+        <div class="control-button">
+            <a href="/Review/Add/@Model.Id">Add Review</a>
+        </div>
+        </div>
+        <ul class="product-index-cards card-container-row">
+            @foreach (Review review in Model.Reviews)
+            {
+                <li class="review-card">
+                    <div class="review-card-title">
+                        <a href="/Review/Detail/@review.Id"><h2>@review.Title</h2></a>
+                    </div>
+                    <div class="review-card-details">
+                        <div>
+                            <h2>Submitted By: @review.UserName</h2>
+                        </div>
+                        <div class="card-control-container">
+                            <div>
+                                <div class="card-control-button">
+                                    <a href="/Product/Edit/@review.Id">Edit</a>
+                                </div>
+                                <div class="card-control-button">
+                                    <a href="/Product/Delete/@review.Id">Delete</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card-rating">
+                        <div class="review-card-rating-background">
+                            <div>@review.Rating</div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
