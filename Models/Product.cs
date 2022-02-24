@@ -14,13 +14,24 @@ namespace template_csharp_reviews_site.Models
 
         public string OSVer { get; set; }
 
+        public string Processor { get; set; }
+
+        public string RamSize { get; set; }
+
+        public string Storage { get; set; }
+
         public double Price { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 
         public virtual List<Review> Reviews { get; set; }
 
-        public string Picture { get; set; }
+        public string Picture {get; set; }
+
+        public virtual string PictureOrDefault
+        {
+            get => String.IsNullOrEmpty(Picture) ? "/images/default_phone.jpg" : Picture;
+        }
 
         public virtual double AverageReviewRating
         {

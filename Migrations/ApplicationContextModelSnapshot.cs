@@ -41,8 +41,17 @@ namespace template_csharp_reviews_site.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<string>("Processor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RamSize")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Storage")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -57,7 +66,10 @@ namespace template_csharp_reviews_site.Migrations
                             OSVer = "Android 10",
                             Picture = "https://th.bing.com/th/id/OIP.KaKM93VZeh0ZQH0ylnub2gHaHa?pid=ImgDet&rs=1",
                             Price = 800.0,
-                            ReleaseDate = new DateTime(2022, 2, 23, 11, 41, 47, 802, DateTimeKind.Local).AddTicks(3410)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 941, DateTimeKind.Local).AddTicks(7881),
+                            Storage = "512GB"
                         },
                         new
                         {
@@ -67,7 +79,10 @@ namespace template_csharp_reviews_site.Migrations
                             OSVer = "iOS",
                             Picture = "https://th.bing.com/th/id/R.708c4252d828ae9a7f2eb797f7577b30?rik=4b1OYH%2bB6nrH2g&pid=ImgRaw&r=0",
                             Price = 1099.0,
-                            ReleaseDate = new DateTime(2022, 2, 23, 11, 41, 47, 810, DateTimeKind.Local).AddTicks(7143)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(4665),
+                            Storage = "512GB"
                         },
                         new
                         {
@@ -77,7 +92,10 @@ namespace template_csharp_reviews_site.Migrations
                             OSVer = "Android 9",
                             Picture = "https://th.bing.com/th/id/OIP.oMxlQYNUc6msuFWHGQOglgHaHc?pid=ImgDet&rs=1",
                             Price = 499.0,
-                            ReleaseDate = new DateTime(2022, 2, 23, 11, 41, 47, 810, DateTimeKind.Local).AddTicks(7416)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(4849),
+                            Storage = "512GB"
                         },
                         new
                         {
@@ -87,7 +105,10 @@ namespace template_csharp_reviews_site.Migrations
                             OSVer = "Android 12",
                             Picture = "https://touchit.sk/wp-content/uploads/2021/05/google_pixel_6_6_pro_duo_nowat.jpg",
                             Price = 599.0,
-                            ReleaseDate = new DateTime(2022, 2, 23, 11, 41, 47, 810, DateTimeKind.Local).AddTicks(7457)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(4878),
+                            Storage = "512GB"
                         });
                 });
 
@@ -129,7 +150,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 23, 11, 41, 47, 810, DateTimeKind.Local).AddTicks(8929),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(5838),
                             Title = "Great.",
                             UserName = "Lisa"
                         },
@@ -139,7 +160,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 23, 11, 41, 47, 811, DateTimeKind.Local).AddTicks(2705),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(8342),
                             Title = "Great.",
                             UserName = "Norm"
                         },
@@ -149,7 +170,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 23, 11, 41, 47, 811, DateTimeKind.Local).AddTicks(2767),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(8384),
                             Title = "Great.",
                             UserName = "Chaz"
                         },
@@ -159,7 +180,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 23, 11, 41, 47, 811, DateTimeKind.Local).AddTicks(2807),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(8411),
                             Title = "Great.",
                             UserName = "Donna"
                         });

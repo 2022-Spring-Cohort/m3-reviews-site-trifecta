@@ -10,8 +10,8 @@ using template_csharp_reviews_site;
 namespace template_csharp_reviews_site.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220215213643_reviews")]
-    partial class reviews
+    [Migration("20220223221700_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,11 +37,23 @@ namespace template_csharp_reviews_site.Migrations
                     b.Property<string>("OSVer")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Picture")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<string>("Processor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RamSize")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Storage")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -54,8 +66,12 @@ namespace template_csharp_reviews_site.Migrations
                             Brand = "Samsung",
                             Model = "Galaxy",
                             OSVer = "Android 10",
+                            Picture = "https://th.bing.com/th/id/OIP.KaKM93VZeh0ZQH0ylnub2gHaHa?pid=ImgDet&rs=1",
                             Price = 800.0,
-                            ReleaseDate = new DateTime(2022, 2, 15, 16, 36, 42, 439, DateTimeKind.Local).AddTicks(2730)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 941, DateTimeKind.Local).AddTicks(7881),
+                            Storage = "512GB"
                         },
                         new
                         {
@@ -63,8 +79,12 @@ namespace template_csharp_reviews_site.Migrations
                             Brand = "Apple",
                             Model = "iPhone 13 Pro Max",
                             OSVer = "iOS",
+                            Picture = "https://th.bing.com/th/id/R.708c4252d828ae9a7f2eb797f7577b30?rik=4b1OYH%2bB6nrH2g&pid=ImgRaw&r=0",
                             Price = 1099.0,
-                            ReleaseDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(1317)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(4665),
+                            Storage = "512GB"
                         },
                         new
                         {
@@ -72,8 +92,12 @@ namespace template_csharp_reviews_site.Migrations
                             Brand = "Motorola",
                             Model = "Razr",
                             OSVer = "Android 9",
+                            Picture = "https://th.bing.com/th/id/OIP.oMxlQYNUc6msuFWHGQOglgHaHc?pid=ImgDet&rs=1",
                             Price = 499.0,
-                            ReleaseDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(1594)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(4849),
+                            Storage = "512GB"
                         },
                         new
                         {
@@ -81,8 +105,12 @@ namespace template_csharp_reviews_site.Migrations
                             Brand = "GooglePhone",
                             Model = "Pixel 6 Pro",
                             OSVer = "Android 12",
+                            Picture = "https://touchit.sk/wp-content/uploads/2021/05/google_pixel_6_6_pro_duo_nowat.jpg",
                             Price = 599.0,
-                            ReleaseDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(1625)
+                            Processor = "Snap Dragon",
+                            RamSize = "256GB",
+                            ReleaseDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(4878),
+                            Storage = "512GB"
                         });
                 });
 
@@ -113,6 +141,8 @@ namespace template_csharp_reviews_site.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("Reviews");
 
                     b.HasData(
@@ -122,7 +152,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(2688),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(5838),
                             Title = "Great.",
                             UserName = "Lisa"
                         },
@@ -132,7 +162,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(5393),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(8342),
                             Title = "Great.",
                             UserName = "Norm"
                         },
@@ -142,7 +172,7 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(5574),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(8384),
                             Title = "Great.",
                             UserName = "Chaz"
                         },
@@ -152,10 +182,26 @@ namespace template_csharp_reviews_site.Migrations
                             Content = "I love it.",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2022, 2, 15, 16, 36, 42, 449, DateTimeKind.Local).AddTicks(5605),
+                            ReviewDate = new DateTime(2022, 2, 23, 17, 16, 59, 949, DateTimeKind.Local).AddTicks(8411),
                             Title = "Great.",
                             UserName = "Donna"
                         });
+                });
+
+            modelBuilder.Entity("template_csharp_reviews_site.Models.Review", b =>
+                {
+                    b.HasOne("template_csharp_reviews_site.Models.Product", "Product")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("template_csharp_reviews_site.Models.Product", b =>
+                {
+                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }
